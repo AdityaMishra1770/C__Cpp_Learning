@@ -1,6 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+
+
+
+// --------------------------------Storage Class----------------------
+
+
+
+int ao = 4;
+void maly(){
+    extern int ao;
+    printf("Extern varible ao= %d\n",ao);
+    static int c = 5;
+    printf("Static variable c=%d\n",c);
+    c++;
+    register ai =4578;
+    printf("Register variable ai=%d\n",ai);
+}
+
+
+
+
 int main()
 {
     int *ptr;
@@ -59,8 +80,8 @@ int main()
             // ----------------------------Free ___________________
             free(ptr);
             printf("Memory freed %d & %d\n",&ptr,ptr);
-            
 
-    
+// -------------------------------Storage Classes---------------------
+    maly();maly();maly();maly();
     return 0;
 }
