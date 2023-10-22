@@ -3,7 +3,7 @@
 #include <conio.h>
 
 // --------------------------------Storage Class----------------------
-int local = 0; 
+int local = 0;
 int ao = 4;
 int *maly()
 {
@@ -14,8 +14,18 @@ int *maly()
     c++;
     register int ai = 4578;
     printf("Register variable ai=%d\n", ai);
-    extern int local ;
+    extern int local;
     return &local;
+}
+int reverse(int n)
+{
+    int re = 0;
+    while (n != 0)
+    {
+        re = re * 10 + n % 10;
+        n = n / 10;
+    }
+    return re;
 }
 
 int main2()
@@ -122,6 +132,6 @@ int main2()
     }
     // the scope_ptr has become dangling as going out of scope
     printf("Now scope_ptr Dangling pointer %p %p\n", *scope_ptr, scope_ptr);
-    
+
     return 0;
 }
