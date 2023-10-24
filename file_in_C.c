@@ -6,7 +6,7 @@ int main()
 {
     // ----- File Operations [note:write or append create file]------
     FILE *point = NULL;
-    point = fopen("File.txt", "a+");
+    point = fopen("File.txt", "r+");
     fprintf(point,"%s","Write the content here\n"); //works with a or w mode to write in file
     // char go[30]; // String to scan file.text
     // fscanf(point, "%s", go);
