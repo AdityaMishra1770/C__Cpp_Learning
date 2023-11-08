@@ -2,6 +2,44 @@
 using namespace std;
 int main(int argc, char const *argv[])
 {
+    // Switch fro no. of notes.
+
+    int note;
+    cin >> note;
+    while (note != 0)
+    {
+        int casey = note >= 100 ? 1 : note >= 50 ? 2
+                                 : note >= 20   ? 3
+                                               : 4;
+        // cout << note << " Casey becomes " << casey << endl;
+        switch (casey)
+        {
+        case 1:
+            cout << "100's note : " << note / 100 << endl;
+            note = note % 100;
+            // cout << note << endl;
+            break;
+        case 2:
+            cout << "50's note : " << note / 50 << endl;
+            note = note % 50;
+            // cout << note << endl;
+            break;
+        case 3:
+            cout << "20's note : " << note / 20 << endl;
+            note = note % 20;
+            // cout << note << endl;
+            break;
+        case 4:
+            cout << "1's note : " << note / 1 << endl;
+            note = note % 1;
+            // cout << note << endl;
+            break;
+        default:
+            cout << "Error" << endl;
+            break;
+        }
+    }
+
     cout << "Pyara Calculator" << endl;
     int a, b;
     char o;
