@@ -170,7 +170,7 @@ void swap_alter(int arr[], int size)
         cout << arr[i] << " ";
     }
 }
-void unique(int arr[], int size)
+void first_unique(int arr[], int size)
 {
     int c = 0, u = arr[0];
     while (c < size)
@@ -200,7 +200,63 @@ void unique(int arr[], int size)
 
         u = arr[c];
     }
+    if (c >= size)
+    {
+        std::cout << endl;
+        std::cout << "No unique no. in array " << endl;
+    }
 }
+int findDuplicate(vector<int> &arr, int n){
+	// Write your code here.
+
+	int index = 0, curr;
+	for(int i =0;i<n;i++){
+		index++;
+		curr = arr[i];
+		for(int j = index;j<n;j++){
+			if (arr[j] == curr){
+				return curr;
+				break;
+			}
+		}
+	}
+}
+int pairSum(vector<int> &arr, int n, int target) {
+  // Write your code here.
+  int i = 0, start = 0, end = n - 1, pair = 0, curr;
+  while (start < end) {
+    if (arr[i] + arr[end] == target && i != end) {
+      // std::cout << " mathced arr[" << i << "] = " << arr[i] << " arr[" << end
+                // << "]  = " << arr[end]
+                // << " arr[i]+arr[j] = " << arr[i] + arr[end]
+                // << " target = " << target << endl;
+      start++;
+      end--;
+      pair++;
+      i = start;
+
+    } else if (i == end) {
+      // std::cout << "Not mathced arr[" << i << "] = " << arr[i] << " arr[" << end
+      //           << "]  = " << arr[end]
+      //           << " arr[i]+arr[j] = " << arr[i] + arr[end]
+      //           << " target = " << target << endl;
+      i = start;
+      end--;
+
+    } else {
+      // std::cout << "not mathced arr[" << i << "] = " << arr[i] << " arr[" << end
+      //           << "]  = " << arr[end]
+      //           << " arr[i]+arr[end] = " << arr[i] + arr[end]
+      //           << " target = " << target << endl;
+      i++;
+    }
+  }
+  if (pair) {
+    return pair;
+  }
+  return -1;
+}
+
 int main(int argc, char const *argv[])
 {
     // int arro[7] = {-7, 8, 689, 56,  24, 450};
@@ -219,10 +275,11 @@ int main(int argc, char const *argv[])
     // }
     // cout << "\n";
     // binarySearch(arro, 7, 69);
-    int y[] = {56, 56, 56, 66, 66, 68, 68, 78};
+    int y[] = {56, 56, 56, 68, 76, 68, 68, 66};
     // binarySearch(y, 7, 58);
     // reverse(y, 8);
     // swap_alter(y, 8);
-    // unique(y, 8);
+
+    first_unique(y, 8);
     return 0;
 }
