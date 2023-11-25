@@ -7,7 +7,7 @@ bool isEven(int a)
     return true;
 }
 
-// home-work A.P. 
+// home-work A.P.
 int ap_3Mn_pl_7(int a){
     return  (3*a + 7);
 }
