@@ -13,7 +13,24 @@ void selectionSort(vector<int> &arr, int n) {
     swap(arr[i], arr[small]);
   }
 }
+
+void bubbleSort(vector<int> &arr, int n) {
+  // Write your code here.
+  // sort(arr.begin(),arr.end());
+  for (int i = 1; i < n; i++) {
+    bool notswaped = true;
+    for (int j = 0; j < (n - i); j++) {
+      if (arr[j] > arr[j + 1]) {
+        swap(arr[j], arr[j + 1]);
+        notswaped = false;
+      }
+    }
+    if (notswaped) {
+      break;
+    }
+  }
+}
+
 int main(int argc, char const *argv[]){
-    
     return 0;
 }

@@ -92,7 +92,7 @@ int main(int argc, char const *argv[])
         int ui = u%10;
         summ += ui;
         mul *= ui;
-        u = u/10;  
+        u = u/10;
     }
     cout << "Sum  and multiply difference of : "<<uo<<" is "<<mul - summ<<endl;
     return 0;
