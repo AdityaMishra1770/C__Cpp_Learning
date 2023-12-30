@@ -104,7 +104,6 @@ bool possible(vector<int> &arr, int n, int m, int mid) {
   }
   return true;
 }
-
 int findPages(vector<int> &arr, int n, int m) {
   // Write your code here.
   int s = 0;

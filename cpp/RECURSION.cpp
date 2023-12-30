@@ -95,6 +95,26 @@ bool search(int arr[], int size, int key)
         return ans;
     }
 }
+
+int pow(int a, int b)
+{
+    if (b == 1)
+    {
+        return a;
+    }
+    else if (b == 0)
+    {
+        return 1;
+    }
+    if (b & 1)
+    {
+        return a * pow(a, b / 2) * pow(a, b / 2);
+    }
+    else
+    {
+        return pow(a, b / 2) * pow(a, b / 2);
+    }
+}
 bool isSorted(int arr[], int size)
 {
     if (size == 0 || size == 1)
@@ -158,6 +178,23 @@ void reverseDisplay(string str)
     str.resize(newLength);
     reverseDisplay(str);
 }
+
+void Recursive_Bubble(int arr[], int size)
+{
+    if (size == 1)
+    {
+        return;
+    }
+    for (int i = 0; i < size-1; i++)
+    {
+        if (arr[i] > arr[i + 1])
+        {
+            swap(arr[i + 1], arr[i]);
+        }
+    }
+    Recursive_Bubble(arr, size - 1);
+}
+
 int main(int argc, char const *argv[])
 {
     // int *n = new int;
@@ -175,6 +212,23 @@ int main(int argc, char const *argv[])
     // bool bi = recursive_BinarySearch(arr, 6, 11);
     // cout << endl
     //      << bi;
-    reverseDisplay("Hello C++ i am doing fine.");
+    // reverseDisplay("Hello C++ i am doing fine.");
+    // cout << "3 to power 16 is = " << pow(3, 16);
+    int arr[6] = {10, 6, 8, 9, 7, 9};
+    cout << "Current array = ";
+    for (int i = 0; i < 6; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    Recursive_Bubble(arr, 6);
+    cout << "Sorted array = ";
+    for (int i = 0; i < 6; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
     return 0;
 }
